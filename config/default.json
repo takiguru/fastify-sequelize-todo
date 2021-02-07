@@ -5,5 +5,10 @@
         "options": {
             "logger": true
         }
+    },
+    "swagger": {
+        "title": "TODO Service",
+        "description": "Todo application for demo purpose",
+        "enabled": true
     }
 }

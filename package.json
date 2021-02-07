@@ -18,7 +18,8 @@
   "license": "MIT",
   "dependencies": {
     "config": "^3.3.3",
-    "fastify": "^3.11.0"
+    "fastify": "^3.11.0",
+    "fastify-swagger": "^4.2.0"
   },
   "devDependencies": {
     "eslint": "^7.19.0",
