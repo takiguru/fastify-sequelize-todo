@@ -98,8 +98,8 @@ const update = {
                 description: 'Todo updated',
                 type: 'object',
                 properties: {
-                    firstName: { type: 'string' },
-                    lastName: { type: 'string' },
+                    title: { type: 'string' },
+                    body: { type: 'string' },
                 },
             },
             400: {
