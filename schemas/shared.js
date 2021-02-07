@@ -1,6 +1,6 @@
 const defaultErrorResponse = {
     statusCode: { type: 'number' },
-    error: { type: 'string' },
+    error: { type: 'string', optional: true },
     message: { type: 'string' },
 };
 

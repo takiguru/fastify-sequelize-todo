@@ -2,6 +2,7 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
     class Todo extends Model {}
+
     Todo.init(
         {
             title: DataTypes.STRING,
@@ -13,5 +14,10 @@ module.exports = (sequelize, DataTypes) => {
             modelName: 'Todo',
         },
     );
+
+    Todo.associate = function (models) {
+        Todo.belongsTo(models.Author, { as: 'author', foreignKey: 'authorId' });
+    };
+
     return Todo;
 };

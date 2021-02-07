@@ -13,6 +13,7 @@ const startup = async () => {
     plugins.register(service);
     service.register(authorHandler, { prefix: '/author' });
     service.register(todoHandler, { prefix: '/todo' });
+    service.decorate('database', database);
     try {
         await database.sequelize.authenticate();
         await service.listen(serviceConfig.port, serviceConfig.host);
