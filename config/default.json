@@ -6,6 +6,7 @@
             "logger": true
         }
     },
+    "helmet": {},
     "swagger": {
         "title": "TODO Service",
         "description": "Todo application for demo purpose",

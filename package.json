@@ -19,6 +19,7 @@
   "dependencies": {
     "config": "^3.3.3",
     "fastify": "^3.11.0",
+    "fastify-helmet": "^5.2.0",
     "fastify-swagger": "^4.2.0"
   },
   "devDependencies": {
