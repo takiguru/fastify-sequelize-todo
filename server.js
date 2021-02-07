@@ -2,6 +2,7 @@ const fastify = require('fastify');
 const plugins = require('./plugins');
 const config = require('config');
 const serviceConfig = config.get('service');
+const database = require('./models');
 
 //Handlers
 const authorHandler = require('./handlers/author');
@@ -13,6 +14,7 @@ const startup = async () => {
     service.register(authorHandler, { prefix: '/author' });
     service.register(todoHandler, { prefix: '/todo' });
     try {
+        await database.sequelize.authenticate();
         await service.listen(serviceConfig.port, serviceConfig.host);
     } catch (error) {
         service.log.error(error);

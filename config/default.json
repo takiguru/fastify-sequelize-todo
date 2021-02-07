@@ -6,6 +6,16 @@
             "logger": true
         }
     },
+    "database": {
+        "sequelizeOptions": {
+            "database": "todoapp",
+            "dialect": "postgres",
+            "host": "0.0.0.0",
+            "username": "dev",
+            "password": "verysecretpassword",
+            "port": "5432"
+        }
+    },
     "helmet": {},
     "swagger": {
         "title": "TODO Service",
