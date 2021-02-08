@@ -1,40 +1,45 @@
 {
-  "name": "acasus-test",
-  "version": "1.0.0",
-  "description": "Test project for Acasus software developer position",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "start:dev": "nodemon server.js",
-    "lint": "eslint **/*.js",
-    "lint:fix": "eslint --fix **/*.js",
-    "database:migrate": "npx sequelize-cli db:migrate --config config/sequelize-cli.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:takiguru/acasus-test.git"
-  },
-  "author": "Péter Takács",
-  "license": "MIT",
-  "dependencies": {
-    "config": "^3.3.3",
-    "fastify": "^3.11.0",
-    "fastify-helmet": "^5.2.0",
-    "fastify-swagger": "^4.2.0",
-    "pg": "^8.5.1",
-    "pg-hstore": "^2.3.3",
-    "sequelize": "^6.5.0"
-  },
-  "devDependencies": {
-    "eslint": "^7.19.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "nodemon": "^2.0.7",
-    "prettier": "^2.2.1",
-    "sequelize-cli": "^6.2.0"
-  },
-  "engines": {
-    "node": ">= 12.0.0"
-  }
+    "name": "acasus-test",
+    "version": "1.0.0",
+    "description": "Test project for Acasus software developer position",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "start:dev": "nodemon index.js",
+        "lint": "eslint **/*.js",
+        "lint:fix": "eslint --fix **/*.js",
+        "database:migrate": "npx sequelize-cli db:migrate --config config/sequelize-cli.js",
+        "test": "cross-env NODE_ENV=test jest test --forceExit --detectOpenHandles",
+        "test:migrate": "cross-env NODE_ENV=test npx sequelize-cli db:migrate --config config/sequelize-cli.js",
+        "test:dev": "cross-env NODE_ENV=test jest test --watchAll --detectOpenHandles"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:takiguru/acasus-test.git"
+    },
+    "author": "Péter Takács",
+    "license": "MIT",
+    "dependencies": {
+        "config": "^3.3.3",
+        "fastify": "^3.11.0",
+        "fastify-helmet": "^5.2.0",
+        "fastify-swagger": "^4.2.0",
+        "pg": "^8.5.1",
+        "pg-hstore": "^2.3.3",
+        "sequelize": "^6.5.0"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "eslint": "^7.19.0",
+        "eslint-config-prettier": "^7.2.0",
+        "eslint-plugin-prettier": "^3.3.1",
+        "jest": "^26.6.3",
+        "nodemon": "^2.0.7",
+        "prettier": "^2.2.1",
+        "sequelize-cli": "^6.2.0",
+        "sequelize-mock": "^0.10.2"
+    },
+    "engines": {
+        "node": ">= 12.0.0"
+    }
 }
