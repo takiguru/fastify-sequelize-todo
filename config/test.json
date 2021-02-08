@@ -1,0 +1,19 @@
+{
+    "service": {
+        "options": {
+            "logger": false
+        }
+    },
+    "database": {
+        "forceSync": true,
+        "sequelizeOptions": {
+            "database": "todoapp-test",
+            "dialect": "postgres",
+            "host": "0.0.0.0",
+            "username": "dev",
+            "password": "verysecretpassword",
+            "port": "5432",
+            "logging": false
+        }
+    }
+}
