@@ -11,9 +11,10 @@ const create = {
         },
         body: {
             type: 'object',
+            required: ['title', 'body'],
             properties: {
-                title: { type: 'string' },
-                body: { type: 'string' },
+                title: { type: 'string', minLength: 3, maxLength: 250 },
+                body: { type: 'string', minLength: 3, maxLength: 250 },
             },
         },
         response: {
@@ -89,8 +90,8 @@ const update = {
         body: {
             type: 'object',
             properties: {
-                title: { type: 'string' },
-                body: { type: 'string' },
+                title: { type: 'string', minLength: 3, maxLength: 250 },
+                body: { type: 'string', minLength: 3, maxLength: 250 },
             },
         },
         response: {
