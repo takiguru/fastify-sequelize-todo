@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+  todo-service:
+    depends_on:
+      - database
+    restart: always
+    build: .
+    ports:
+      - '${SERVICE_PORT}:${SERVICE_PORT}'
+    env_file:
+      - .env
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+  database:
+    image: 'postgres'
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - '${DATABASE_PORT}:5432'
+    volumes:
+      - database-storage:/var/lib/postgresql/data/
+
+volumes:
+  database-storage:

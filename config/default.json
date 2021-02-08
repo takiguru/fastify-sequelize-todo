@@ -14,7 +14,8 @@
             "host": "0.0.0.0",
             "username": "dev",
             "password": "verysecretpassword",
-            "port": "5432"
+            "port": "5432",
+            "logging": true
         }
     },
     "helmet": {},

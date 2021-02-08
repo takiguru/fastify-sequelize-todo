@@ -1,0 +1,15 @@
+{
+    "service": {
+        "port": "SERVICE_PORT",
+        "host": "SERVICE_HOST"
+    },
+    "database": {
+        "sequelizeOptions": {
+            "database": "DATABASE_NAME",
+            "host": "DATABASE_HOST",
+            "username": "DATABASE_USER",
+            "password": "DATABASE_PASSWORD",
+            "port": "DATABASE_PORT"
+        }
+    }
+}
