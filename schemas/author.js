@@ -5,9 +5,10 @@ const create = {
         description: 'Create new author',
         body: {
             type: 'object',
+            required: ['firstName', 'lastName'],
             properties: {
-                firstName: { type: 'string' },
-                lastName: { type: 'string' },
+                firstName: { type: 'string', minLength: 2, maxLength: 250 },
+                lastName: { type: 'string', minLength: 2, maxLength: 250 },
             },
         },
         response: {
@@ -80,8 +81,8 @@ const update = {
         body: {
             type: 'object',
             properties: {
-                firstName: { type: 'string' },
-                lastName: { type: 'string' },
+                firstName: { type: 'string', minLength: 2, maxLength: 250 },
+                lastName: { type: 'string', minLength: 2, maxLength: 250 },
             },
         },
         response: {
